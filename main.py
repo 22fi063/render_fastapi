@@ -43,14 +43,20 @@ def index():
         </head>
         <body bgcolor="#0060ff">
         <center>
-        <h1></h1>
+        <h1>自己紹介</h1>
         </center>
         <hr>
         <p>
-        <h3></h3>
-        基本的なタグをいくつか知っているだけでも最低限の<B>簡単なHTML文書</B>が作れます。
-         これにリンクというものをつければ立派なホームページを作ることができます。<BR>
-        <h4>さらに応用タグを使うといろいろなことができます。</h4>
+        <div>
+            <h2>基本情報</h2>
+            <p>年齢: 20歳</p>
+            <p>職業: 学生</p>
+            <p>所在地: 東京都</p>
+        </div>
+        <div>
+            <h2>興味・趣味</h2>
+            <p>ゲーム　YouTube　アニメ　漫画</p>
+        </div>
         <hr align=center size=10 width=420 color="#20ff00">
         <center><marquee width=300 bgcolor="#ffffff">
         Welcome to My Page
@@ -61,5 +67,9 @@ def index():
     return HTMLResponse(content=html_content, status_code=200)
 
 @app.post("/present")
-async def give_present(present):
-    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  # f文字列というPythonの機能を使っている
+async def give_present(present: Present):
+    if present.content == "キャンディー":
+        response = f"サーバです。トリックオアトリート！ {present.content}ありがとう！"
+    else:
+        response = "サーバです。トリックオアトリート！ お菓子じゃなかったのでいたずらします！"
+    return {"response": response}
