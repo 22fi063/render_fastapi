@@ -39,17 +39,27 @@ def index():
     html_content = """
     <html>
         <head>
-            <title>My Custom Page</title>
+            <title>kadai9-A</title>
         </head>
-        <body>
-            <h1>Welcome to My Custom Page!</h1>
-            <p>This is a paragraph with some custom content.</p>
-            <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </ul>
+        <body bgcolor="#0060ff">
+        <center>
+        <h1></h1>
+        </center>
+        <hr>
+        <p>
+        <h3></h3>
+        基本的なタグをいくつか知っているだけでも最低限の<B>簡単なHTML文書</B>が作れます。
+         これにリンクというものをつければ立派なホームページを作ることができます。<BR>
+        <h4>さらに応用タグを使うといろいろなことができます。</h4>
+        <hr align=center size=10 width=420 color="#20ff00">
+        <center><marquee width=300 bgcolor="#ffffff">
+        Welcome to My Page
+        </marquee></center>
         </body>
-    </html>
+</html> 
     """
     return HTMLResponse(content=html_content, status_code=200)
+
+@app.post("/present")
+async def give_present(present):
+    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  # f文字列というPythonの機能を使っている
