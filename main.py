@@ -10,9 +10,6 @@ import random  # randomライブラリを追加
 
 app = FastAPI()
 
-class Present(BaseModel):
-    content: str
-
 
 @app.get("/")
 async def root():
