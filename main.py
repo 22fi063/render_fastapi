@@ -10,6 +10,9 @@ import random  # randomライブラリを追加
 
 app = FastAPI()
 
+class Present(BaseModel):
+    content: str
+
 
 @app.get("/")
 async def root():
@@ -69,6 +72,7 @@ def index():
     </html> 
     """
     return HTMLResponse(content=html_content, status_code=200)
+    
 
 @app.post("/present")
 async def give_present(present: Present):
