@@ -62,7 +62,7 @@ def index():
         Welcome to My Page
         </marquee></center>
         </body>
-</html> 
+    </html> 
     """
     return HTMLResponse(content=html_content, status_code=200)
 
