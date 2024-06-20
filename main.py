@@ -72,5 +72,9 @@ def index():
     
 
 @app.post("/present")
-async def give_present(present: Present):
-    return {"response": f"サーバです。トリックオアトリート！ {present}ありがとう"}
+async def give_present(present):
+    if present == "キャンディー":
+        response = f"サーバです。トリックオアトリート！ {present}ありがとう"
+    else:
+        response = "サーバです。トリックオアトリート！ お菓子じゃなかったのでいたずらします！"
+    return {"response": response}
