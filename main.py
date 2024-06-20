@@ -42,25 +42,27 @@ def index():
             <title>kadai9-A</title>
         </head>
         <body bgcolor="#0060ff">
-        <center>
-        <h1>自己紹介</h1>
-        </center>
-        <hr>
-        <p>
-        <div>
+            <center>
+            <h1>自己紹介</h1>
+            </center>
+            <hr>
+            <p>
+            <div>
             <h2>基本情報</h2>
             <p>年齢: 20歳</p>
             <p>職業: 学生</p>
             <p>所在地: 東京都</p>
-        </div>
+            </div>
         <div>
             <h2>興味・趣味</h2>
             <p>ゲーム　YouTube　アニメ　漫画</p>
         </div>
         <hr align=center size=10 width=420 color="#20ff00">
-        <center><marquee width=300 bgcolor="#ffffff">
-        Welcome to My Page
-        </marquee></center>
+        <center>
+            <marquee width=300 bgcolor="#ffffff">
+            Welcome to My Page
+            </marquee>
+            </center>
         </body>
     </html> 
     """
